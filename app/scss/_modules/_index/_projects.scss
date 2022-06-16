@@ -1,0 +1,48 @@
+.projects {
+  margin-bottom: 60px;
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media-w($lg) {
+      justify-content: space-around;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 32%;
+    padding: 10px;
+    border: 1px solid $accent-lite;
+
+    @include media-w($lg) {
+      flex-basis: 45%;
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @include media-w($sm) {
+      flex-basis: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__img {
+    object-position: center;
+    object-fit: contain;
+  }
+}

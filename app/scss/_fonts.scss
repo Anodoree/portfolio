@@ -1,0 +1,19 @@
+// logo font: "Nico Moji", regular, (48)
+
+@font-face {
+  font-family: "CircularStd";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/CircularStd-Bold.woff2") format("woff2"),
+    url("../fonts/CircularStd-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CircularStd";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/CircularStd-Book.woff2") format("woff2"),
+    url("../fonts/CircularStd-Book.woff") format("woff");
+  font-display: swap;
+}

@@ -1,14 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="robots" content="noindex">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Anodoree | Portfolio</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
 </head>
+
 <body>
 
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__box">
+          <div class="header__logo logo">
+            <img class="logo__img" src="images/logo-lg.png" alt="Logo" width="109" height="12">
+          </div>
+          <span class="work">Now available</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <h1 class="hero__title">
+              👋 Hi, I'm Andrew
+            </h1>
+
+            <div class="hero__text">
+              <p>
+                I’m an <span class="accent">HTML/CSS developer</span>. <span class="accent">JavaScript</span> knowledge is enough to add the minimum necessary dynamics to the site, adaptation of borrowed scripts, can apply JQuery plugins. In the work I use <span class="accent">Git, Gulp, SCSS, BEM-naming, PerfectPixel, Figma</span>. Familiar with <span class="accent">Photoshop, Pug (Jade), SASS, modularity</span>. There is an <span class="accent">understanding of UI and</span> the connection with <span class="accent">backend</span>.
+              </p>
+              <p>
+                I’m looking for a freelance team, a one-time task or a place in a web studio.
+              </p>
+            </div>
+        
+            <address class="address">
+              <p>
+                Russia, Ryazan (GMT+3)
+              </p>
+              <p>
+                Mail to contact: <a href="mailto:emfwws@bk.ru">emfwws@bk.ru</a>
+              </p>
+            </address>
+          </div>
+
+          <div class="hero__visual">
+            <div class="hero__card">
+              <div class="hero__img-box">
+                <img class="hero__img" src="images/avatar-real.jpg" alt="Avatar" width="96" height="96">
+              </div>
+
+              <div class="hero__name">
+                <p>
+                  Andrew Zemskov
+                </p>
+              </div>
+              <div class="hero__place">
+                <p>
+                  Ryazan
+                </p>
+              </div>
+
+              <span class="hero__cloud hero__cloud--html">HTML</span>
+              <span class="hero__cloud hero__cloud--pug">Pug</span>
+              <span class="hero__cloud hero__cloud--bem">BEM</span>
+              <span class="hero__cloud hero__cloud--css">CSS</span>
+              <span class="hero__cloud hero__cloud--scss">SCSS</span>
+              <span class="hero__cloud hero__cloud--sass">SASS</span>
+              <span class="hero__cloud hero__cloud--pp">PerfectPixel</span>
+              <span class="hero__cloud hero__cloud--js">JS</span>
+              <span class="hero__cloud hero__cloud--git">Git</span>
+              <span class="hero__cloud hero__cloud--gulp">Gulp</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="screen-down" type="button" onclick="scrollScreen()">
+        <svg>
+          <use xlink:href="images/sprite.svg#arrow-down"></use>
+        </svg>
+        <span class="sr-only">To next screen</span>
+      </button>
+    </section>
+
+    <section class="projects">
+      <div class="container">
+        <h2 class="projects__title title">
+          My works
+        </h2>
+        <ul class="projects__list">
+          <li class="projects__item">
+            <img class="projects__img" src="images/projects/kagayaku.png" width="350" height="200" alt="kagayaku">
+          </li>
+          <li class="projects__item">
+            <img class="projects__img" src="images/projects/pakko.jpg" width="350" height="200" alt="pakko">
+          </li>
+          <li class="projects__item">
+            <img class="projects__img" src="images/projects/onlineTV.jpg" width="350" height="200" alt="onlineTV">
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__box">
+          <span class="footer__text">
+            Your feedback is welcome
+          </span>
+        </div>
+
+        <div class="footer__box">
+          <span class="footer__text">
+            Andrew Zemskov
+          </span>
+          <span class="footer__text">
+            HTML/CSS developer
+          </span>
+        </div>
+      
+        <div class="footer__box">
+          <a class="footer__link" href="https://github.com/Anodoree" target="_blank" rel="nofollow noopener">
+            <svg>
+              <use xlink:href="images/sprite.svg#github-logo"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="js/main.min.js"></script>
+
 </body>
 </html>

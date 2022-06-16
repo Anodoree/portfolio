@@ -1,0 +1,43 @@
+.address {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  p:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  a {
+    position: relative;
+    display: inline-block;
+    padding: 12px 0 11px;
+    color: $accent;
+    outline: 0;
+    transition: color 0.3s, opacity 0.3s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      left: -2px;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      transition: border-color 0.3s;
+    }
+
+    &:focus::before {
+      border-color: $accent;
+    }
+
+    &:hover {
+      color: $gray-60;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}

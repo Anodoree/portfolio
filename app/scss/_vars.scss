@@ -1,0 +1,25 @@
+$dark-90: #19192e;
+$dark-80: #25323d;
+
+$gray-60: #5d87a8;
+$gray-50: #859fb4;
+$gray-40: #e4eef6;
+
+$white: #ffffff;
+$black: #000000;
+
+$accent: #34547a;
+$accent-lite: #cee4ff;
+$bg: #f9fcff;
+
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$xs: 374px;
+
+@mixin media-w($point) {
+  @media (max-width: $point) {
+    @content;
+  }
+}

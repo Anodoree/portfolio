@@ -1,0 +1,50 @@
+.footer {
+  font-size: 14px;
+  text-align: center;
+  color: $gray-60;
+  background-color: $accent-lite;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+
+    @include media-w($sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__box:not(:last-child) {
+    @include media-w($sm) {
+      margin-bottom: 15px;
+    }
+  }
+  &__text {
+    display: block;
+  }
+
+  svg {
+    width: 44px;
+    height: 44px;
+    padding: 6px;
+    fill: $gray-60;
+  }
+
+  &__link {
+    display: flex;
+    transition: color 0.3s;
+
+    svg {
+      transition: fill 0.3s;
+    }
+
+    &:hover {
+      color: $accent;
+
+      svg {
+        fill: $accent;
+      }
+    }
+  }
+}

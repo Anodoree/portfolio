@@ -1,11 +1,16 @@
-@import 'vars';
 @import 'fonts';
+@import 'vars';
 @import 'reset';
 @import 'global';
+@import 'animation';
 
+@import '_modules/_components/_objects/address';
+@import '_modules/_components/_objects/logo';
+@import '_modules/_components/_objects/screen-down';
+@import '_modules/_components/_objects/work';
 
+@import '_modules/_components/header';
+@import '_modules/_components/footer';
 
-
-
-
-@import 'media';
+@import '_modules/_index/hero';
+@import '_modules/_index/projects';

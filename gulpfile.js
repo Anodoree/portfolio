@@ -7,6 +7,8 @@ const uglify        = require('gulp-uglify');
 const imagemin      = require('gulp-imagemin');
 const del           = require('del');
 const browserSync   = require('browser-sync').create();
+const svgSprite     = require('gulp-svg-sprite');
+const fileinclude   = require('gulp-file-include');
 
 function browsersync() {
   browserSync.init({
@@ -15,6 +17,30 @@ function browsersync() {
     },
     notify: false
   })
+};
+
+function htmlInclude() {
+  return src('app/pages/*.html')
+    .pipe(fileinclude({
+      prefix: '@',
+      basepath: '@file',
+      indent: true
+    }))
+    .pipe(dest('app/'))
+    .pipe(browserSync.stream())
+};
+
+function svgSprites () {
+  return src('app/images/svg/**.svg')
+  .pipe(svgSprite({
+    mode: {
+      stack: {
+        sprite: '../sprite.svg'
+      }
+    }
+  }))
+  .pipe(dest('app/images'))
+  .pipe(browserSync.stream())
 };
 
 function styles() {
@@ -31,7 +57,6 @@ function styles() {
 
 function scripts() {
   return src([
-    'node_modules/jquery/dist/jquery.js',
     'app/js/main.js'
   ])
   .pipe(concat('main.min.js'))
@@ -58,7 +83,7 @@ function images() {
 
 function build() {
   return src([
-    'app/**/*.html',
+    'app/*.html',
     'app/css/style.min.css',
     'app/js/main.min.js'
   ], {base: 'app'})
@@ -70,7 +95,9 @@ function cleanDist() {
 };
 
 function watching() {
+  watch(['app/pages/**/*.html'], htmlInclude);
   watch(['app/scss/**/*.scss'], styles);
+  watch(['app/images/svg/*.svg'], svgSprites);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
   watch(['app/**/*.html']).on('change', browserSync.reload);
 };
@@ -81,7 +108,9 @@ exports.browsersync = browsersync;
 exports.watching = watching;
 exports.images = images;
 exports.cleanDist = cleanDist;
+exports.svgSprites = svgSprites;
+exports.fileinclude = htmlInclude;
 
 exports.build = series(cleanDist, images, build);
 
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(styles, htmlInclude, scripts, svgSprites, browsersync, watching);

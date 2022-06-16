@@ -1,0 +1,18 @@
+.header {
+  &__inner {
+    padding: 30px 0;
+
+    @include media-w($lg) {
+      padding: 15px 0;
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 15px;
+  }
+}

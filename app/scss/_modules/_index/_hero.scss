@@ -1,0 +1,223 @@
+.hero {
+  flex-grow: 1;
+  
+  &__inner {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    height: 100%;
+    padding: 70px 0 140px;
+
+    @include media-w($lg) {
+      flex-direction: column-reverse;
+      padding: 50px 0 100px;
+    }
+
+    @include media-w($md) {
+      padding: 0 0 50px;
+    }
+  }
+
+  &__content {
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include media-w($sm) {
+      flex-basis: auto;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 40px;
+    color: $dark-80;
+
+    @include media-w($lg) {
+      margin-bottom: 15px;
+      font-size: 30px;
+    }
+
+    @include media-w($md) {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    p:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 50%;
+    max-height: calc(100vh - 155px);
+
+    @include media-w($lg) {
+      margin-bottom: 30px;
+    }
+
+    @include media-w($sm) {
+      flex-basis: auto;
+      min-height: calc(100vh - 55px);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 256px;
+    padding: 36px 26px 26px;
+    background-color: $white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px $accent-lite;
+  }
+
+  &__img-box {
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 50%;
+  }
+
+  &__img {
+    transform: rotate(25deg) scaleX(-1);
+  }
+
+  &__name {
+    font-weight: 700;
+    text-align: center;
+    color: $dark-80;
+  }
+
+  &__place {
+    font-size: 14px;
+    color: $gray-50;
+  }
+
+  &__cloud {
+    position: absolute;
+    padding: 5px 10px;
+    background-color: $gray-40;
+    border-radius: 10px;
+    box-shadow: 0 0 20px $accent-lite;
+
+    &:nth-child(2n) {
+      animation: cloud 15s infinite linear;
+    }
+
+    &:nth-child(2n-1) {
+      animation: cloud2 15s infinite linear;
+    }
+
+    &--html {
+      top: 35%;
+      right: 27%;
+      font-weight: 700;
+
+      @include media-w($sm) {
+        top: 32%;
+        right: 15%;
+      }
+    }
+
+    &--pug {
+      bottom: 30%;
+      left: 11%;
+      font-size: 14px;
+      color: $gray-50;
+    }
+
+    &--bem {
+      right: 15%;
+      bottom: 29%;
+      font-weight: 700;
+      color: $gray-60;
+    }
+
+    &--css {
+      bottom: 43%;
+      left: 29%;
+      font-weight: 700;
+
+      @include media-w($sm) {
+        bottom: 46%;
+        left: 15%;
+      }
+    }
+
+    &--scss {
+      top: 20%;
+      right: 20%;
+      font-weight: 700;
+      color: $accent;
+
+      @include media-w($sm) {
+        top: 17%;
+        right: 10%;
+      }
+    }
+
+    &--sass {
+      top: 20%;
+      left: 24%;
+      font-size: 14px;
+      color: $gray-50;
+    }
+
+    &--pp {
+      bottom: 13%;
+      left: 19%;
+      font-weight: 700;
+      color: $accent;
+
+      @include media-w($sm) {
+        bottom: 10%;
+        left: 13%;
+      }
+    }
+
+    &--js {
+      bottom: 20%;
+      right: 31%;
+      font-weight: 700;
+      color: $gray-60;
+
+      @include media-w($sm) {
+        bottom: 12%;
+        right: 28%;
+      }
+    }
+
+    &--git {
+      top: 34%;
+      left: 10%;
+      font-weight: 700;
+      color: $gray-60;
+
+      @include media-w($sm) {
+        top: 27%;
+      }
+    }
+
+    &--gulp {
+      top: 13%;
+      right: 37%;
+      font-weight: 700;
+      color: $gray-60;
+
+      @include media-w($sm) {
+        top: 10%;
+        right: 34%;
+      }
+    }
+  }
+}
